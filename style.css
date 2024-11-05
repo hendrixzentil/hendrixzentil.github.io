@@ -71,7 +71,7 @@ nav ul li a:hover {
     text-align: left;
     font-size: 65px;  /* Increase font size */
     color: #1c2b5a;  /* Dark blue color for text */
-    margin-left: -100px;  /* Adjust the value as needed to move left */
+    margin-left: -60px;  /* Adjust the value as needed to move left */
 }
 /* Statement Text Styling */
 .statement h2 {
