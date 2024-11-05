@@ -1,0 +1,305 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    background-color: #ffffff;
+    color: #191970;
+    line-height: 1.6;
+    padding: 0 20px;
+    font-family: "EB Garamond", serif;
+}
+
+/* Header Styling */
+.header-banner {
+    width: 100%;  /* Make the header span the entire width of the viewport */
+    background-color: #191970;  /* Dark blue color */
+    padding: 20px;
+    color: #ffffff;
+    font-family: "Playfair Display", serif;
+    position: relative;  /* Keep it relative for normal document flow */
+    margin: 0;  /* Remove any default margins that might limit its width */
+    left: 0;    /* Ensure the header starts from the very left */
+    right: 0;   /* Ensure the header ends at the very right */
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content Styling */
+.main-content {
+    display: flex;
+    align-items: center;  /* Center items vertically */
+    justify-content: space-between;  /* Place statement and description with space in between */
+    gap: 10px;  /* Gap between the left and right sections */
+    margin-top: 50px;
+    padding: 0 15%;
+    height: 80vh;  /* Adjust height to balance space */
+}
+
+/* Statement Styling */
+.statement {
+    flex: 1;  /* Allow it to take up proportional space */
+    display: flex;
+    align-items: center;  /* Align the text vertically */
+    text-align: left;
+    font-size: 65px;  /* Increase font size */
+    color: #1c2b5a;  /* Dark blue color for text */
+    margin-left: -100px;  /* Adjust the value as needed to move left */
+}
+/* Statement Text Styling */
+.statement h2 {
+    font-size: 65px;  /* Make the statement large for emphasis */
+    font-weight: normal;  /* Ensure "Lifelong" is not bold */
+    color: #1c2b5a;  /* Dark blue color for text */
+    text-align: left;
+}
+
+/* Keep <strong> elements bold */
+.statement strong {
+    font-weight: bold;
+}
+
+/* Description Styling */
+.description {
+    flex: 2;  /* Take up more space compared to the statement for balance */
+    border-left: 2px solid #1c2b5a;  /* Vertical line separating the sections */
+    padding-left: 30px;
+    line-height: 3;
+    font-size:23px
+}
+
+.description p {
+    margin-bottom: 20px;
+}
+
+/* Intro container styling */
+.intro-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Fade-out animation for intro */
+.fade-out {
+    animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Fade-in for main content */
+.fade-in-main {
+    opacity: 0;
+    animation: fadeInMain 0.2s forwards;
+}
+
+@keyframes fadeInMain {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;  /* Stack vertically on small screens */
+        gap: 20px;
+        padding: 0 5%;
+    }
+
+    .statement {
+        text-align: center;
+        font-size: 2.5rem;  /* Adjust font size for better readability on smaller screens */
+        margin-bottom: 20px;
+    }
+
+    .description {
+        border-left: none;
+        padding-left: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Contact Form Styling */
+.contact-form {
+    flex: 1;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: "EB Garamond", serif;
+    font-size: 1rem;
+    background-color: #f8f8f8;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #1c2b5a;
+    outline: none;
+}
+
+.submit-button {
+    background-color: #191970;
+    color: #ffffff;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: "Playfair Display", serif;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #00008b;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .contact-info,
+    .contact-form {
+        max-width: 100%;
+    }
+
+    .contact-heading {
+        text-align: center;
+        font-size: 2.5rem;
+    }
+
+    .contact-info p {
+        text-align: center;
+        font-size: 1rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* About Content Section */
+.about-content {
+    max-width: 800px;  /* Limit width for readability */
+    margin: 40px auto;  /* Center the content horizontally and add spacing above */
+    text-align: left;
+}
+
+.about-heading {
+    font-family: "Playfair Display", serif;
+    font-size: 70px;
+    font-weight: bold;
+    color: #000;  /* Dark blue color to match the theme */
+    text-align: center;  /* Align heading to the left */
+    margin-bottom: 30px;  /* Space below the heading */
+}
+
+.about-content p {
+    font-size: 24px;
+    margin-bottom: 24px;
+    color: #1c2b5a;
+    line-height: 1.8;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav ul {
+        margin-top: 10px;
+    }
+
+    .about-content {
+        padding: 0 10px;  /* Add padding for smaller screens */
+    }
+
+    .about-heading {
+        font-size: 2.5rem;  /* Reduce the heading size for smaller screens */
+    }
+
+    .about-content p {
+        font-size: 1rem;  /* Reduce paragraph size for smaller screens */
+    }
+}

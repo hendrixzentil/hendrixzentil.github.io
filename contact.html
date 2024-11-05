@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Hendrix Zentil</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display|EB+Garamond">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            background-color: #f9f9f9; /* Light grey background */
+            color: #1c2b5a;
+            line-height: 1.6;
+            font-family: "EB Garamond", serif;
+        }
+
+        /* Header Styling */
+        .header-banner {
+            width: 100%;
+            background-color: #191970;
+            padding: 20px;
+            color: #ffffff;
+            font-family: "Playfair Display", serif;
+        }
+
+        .header-container {
+            max-width: 1920px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Contact Content Section */
+        .contact-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 40px;
+            background-color: #ffffff; /* Pure white background for contact area */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        .contact-info {
+            flex: 1;
+            max-width: 40%;
+        }
+
+        .contact-heading {
+            font-family: "Playfair Display", serif;
+            font-size: 3rem;
+            color: #000000; /* Black color for heading */
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #1c2b5a;
+            line-height: 1.8;
+            max-width: 90%;
+        }
+
+        /* Contact Form Styling */
+        .contact-form {
+            flex: 1;
+            max-width: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            border: none; /* Removed border outline */
+            border-radius: 8px;
+            font-family: "EB Garamond", serif;
+            font-size: 1rem;
+            background-color: #f9f9f9; /* Pure white for input fields */
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none; /* Remove default outline */
+            box-shadow: 0 0 5px rgba(28, 43, 90, 0.5); /* Subtle shadow on focus */
+        }
+
+        .submit-button {
+            background-color: #000000; /* Pure black button */
+            color: #ffffff;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: "Playfair Display", serif;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+            width: auto;
+            align-self: flex-start;
+        }
+
+        .submit-button:hover {
+            background-color: #333333; /* Slightly lighter black on hover */
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            .contact-container {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .contact-info,
+            .contact-form {
+                max-width: 100%;
+            }
+
+            .contact-heading {
+                text-align: center;
+                font-size: 2.5rem;
+            }
+
+            .contact-info p {
+                text-align: center;
+                font-size: 1rem;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="header-banner">
+        <div class="header-container">
+            <h1>Hendrix Zentil</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contact Content Section -->
+    <main>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2 class="contact-heading">Contact.</h2>
+                <p>Your interest is greatly appreciated. I look forward to responding to your queries!</p>
+                <p>Best Regards,<br>Hendrix Z.</p>
+            </div>
+
+            <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" enctype="text/plain">
+                <input type="hidden" name="access_key" value="341122c1-1065-497c-8376-7fe7f5c979f8">
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <textarea id="message" name="message" rows="6" placeholder="Message" required></textarea>
+                <button type="submit" class="submit-button">Send Now</button>
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>

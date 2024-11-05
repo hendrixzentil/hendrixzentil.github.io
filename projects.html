@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Hendrix Zentil</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display|EB+Garamond">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            background-color: #f5f5f5;
+            color: #1c2b5a;
+            line-height: 1.6;
+            font-family: "EB Garamond", serif;
+        }
+
+        /* Header Styling */
+        .header-banner {
+            width: 100%;
+            background-color: #191970;
+            padding: 20px;
+            color: #ffffff;
+            font-family: "Playfair Display", serif;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Projects Content Styling */
+        .projects-content {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        .projects-heading {
+            font-family: "Playfair Display", serif;
+            font-size: 3rem;
+            color: #1c2b5a;
+            margin-bottom: 40px;
+        }
+
+        .project-item {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-title {
+            font-family: "Playfair Display", serif;
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #191970;
+        }
+
+        .project-description {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #1c2b5a;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            .projects-heading {
+                font-size: 2.5rem;
+                text-align: center;
+            }
+
+            .project-title {
+                font-size: 1.8rem;
+            }
+
+            .project-description {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="header-banner">
+        <div class="header-container">
+            <h1>Hendrix Zentil</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Projects Content Section -->
+    <main>
+        <div class="projects-content">
+            <h2 class="projects-heading">Projects</h2>
+
+            <div class="project-item">
+                <h3 class="project-title">This Website</h3>
+                <p class="project-description">My personal website was hand-coded by me, and I learned the HTML, CSS, and JS skills necessary through Youtube tutorials, and utilized AI to create an itinerary of learning and actionables. AI projected I learn the coding languages and finish my website in 10 days, but I managed to get it done in two thanks to my background in game development as a kid. This ongoing project reignited my passion for coding as I set my sights on learning financial modeling on my own time.</p>
+            </div>
+
+            <!-- Additional projects can be added here -->
+        </div>
+    </main>
+</body>
+
+</html>

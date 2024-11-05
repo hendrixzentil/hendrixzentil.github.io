@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Hendrix Zentil</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=EB+Garamond">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .linkedin-container {
+            display: inline-block;
+        }
+        .linkedin-logo {
+            width: 40px;
+            height: 40px;
+        }
+        
+        /* About Content Styling */
+        .about-content {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 0 20px;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+        
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="header-banner">
+        <div class="header-container">
+            <h1>Hendrix Zentil</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- About Content Section -->
+    <main>
+        <div class="about-content">
+            <h2 class="about-heading">About.</h2>
+            <p>⠀⠀⠀⠀Since starting my fitness journey with Taekwondo at age 12 and learning about the venerable lineage of discipline and principles that underpin traditional martial arts, I have cultivated a deep respect for mental resilience, physical conditioning, and the pursuit of personal excellence.</p>
+            <p>This path has led me to question what purpose "personal excellence" serves, and my open-ended answer to that is currently "to do good."</p>
+            <p>To find out what "doing good" was, I looked to history to discern how others have contributed to their societies, overcome obstacles, and impact those around them.</p>
+            <p>My studies have led me to finance and economics, fields that inspire me with their potential to drive meaningful change. Now, I dedicate myself to mastering these fields, and strive to uplift others, create opportunities, and contribute to a sustainable, meaningful future.</p>
+        </div>
+    </main>
+
+    <!-- Footer Section with LinkedIn -->
+    <footer class="footer">
+        <div class="linkedin-container">
+            <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank">
+                <img src="linkedin-logo.png" alt="LinkedIn Logo" class="linkedin-logo">
+            </a>
+        </div>
+    </footer>
+</body>
+
+</html>
