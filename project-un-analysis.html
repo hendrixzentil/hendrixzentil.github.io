@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UN Sustainable Development Analysis - Hendrix Zentil</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prata&family=Public+Sans:wght@400;600&family=Pinyon+Script&family=Castoro&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'prata': ['Prata', 'serif'],
+                        'public-sans': ['Public Sans', 'sans-serif'],
+                        'pinyon': ['Pinyon Script', 'cursive'],
+                        'castoro': ['Castoro', 'serif']
+                    },
+                    colors: {
+                        'accent-red': '#BA1E23',
+                        'off-white': '#f2f2f2',
+                        'dark-gray': '#1A1A1A'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+        
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        
+        @media (min-width: 768px) {
+            .hero-section {
+                flex-direction: row;
+            }
+        }
+        
+        .project-title {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        
+        .skills-bubble, .tools-bubble {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 999px;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        
+        .article-content {
+            max-width: 48rem;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .article-content h2 {
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .article-section {
+            padding: 5rem 2rem;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .view-presentation-btn {
+            transition: all 0.3s ease;
+            background-color: #BA1E23;
+        }
+        
+        .view-presentation-btn:hover {
+            background-color: #d82329;
+            box-shadow: 0 10px 25px rgba(186, 30, 35, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header class="bg-black text-white p-5 flex justify-between items-center">
+        <a href="index.html" class="font-prata text-2xl">Hendrix Z.</a>
+        <nav>
+            <ul class="flex space-x-6 font-public-sans">
+                <li><a href="about.html" class="hover:text-gray-300">About</a></li>
+                <li><a href="explore.html" class="hover:text-gray-300">Explore</a></li>
+                <li><a href="contact.html" class="hover:text-gray-300">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section - Full Screen Split Layout -->
+    <section class="hero-section">
+        <!-- Left Side - Title Information -->
+        <div class="w-full md:w-1/2 bg-gray-200 flex items-center p-8 md:p-16 relative">
+            <div class="max-w-xl fade-in">
+                <h1 class="font-castoro text-5xl md:text-6xl text-black mb-6">UN Sustainable Development Analysis: ASEAN</h1>
+                
+                <div class="font-public-sans text-gray-600 mb-6">
+                    <p class="text-xl">January 2024</p>
+                    <p class="italic">Principles of Macroeconomics</p>
+                </div>
+                
+                <div class="mb-8">
+                    <h3 class="font-public-sans font-semibold text-xl mb-4">Skills</h3>
+                    <div class="flex flex-wrap">
+                        <span class="skills-bubble">Data Analysis</span>
+                        <span class="skills-bubble">Macroeconomics</span>
+                        <span class="skills-bubble">Sustainable Development</span>
+                        <span class="skills-bubble">Comparative Advantage</span>
+                        <span class="skills-bubble">Economic Diversification</span>
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <h3 class="font-public-sans font-semibold text-xl mb-4">Tools</h3>
+                    <div class="flex flex-wrap">
+                        <span class="tools-bubble">Bloomberg Terminal</span>
+                        <span class="tools-bubble">Excel</span>
+                        <span class="tools-bubble">UN SDG Framework</span>
+                        <span class="tools-bubble">Economic Modeling</span>
+                        <span class="tools-bubble">Data Visualization</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="absolute bottom-8 right-8 md:hidden text-center">
+                <span class="text-sm text-gray-500">Scroll down to read more</span>
+                <div class="mt-2 animate-bounce">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Right Side - Featured Image -->
+        <div class="w-full md:w-1/2 h-96 md:h-auto">
+            <img src="project/un-analysis1.jpg" alt="ASEAN Map" class="w-full h-full object-cover">
+        </div>
+    </section>
+
+    <!-- Article Section - Project Journal -->
+    <section class="bg-dark-gray text-white article-section">
+        <div class="article-content fade-in">
+            <div>
+                <h2 class="font-castoro text-4xl mb-6">Project Overview</h2>
+                
+                <p>This project examined the macroeconomic challenges facing ASEAN nations through the lens of sustainable development. By analyzing economic interdependencies, trade patterns, and development indicators, I created a framework for balancing economic growth with sustainability goals. The analysis demonstrated how redirecting 30% of export-focused investment toward digital economy sectors could reduce regional economic volatility by approximately 15%.</p>
+            </div>
+            
+            <div>
+                <h2 class="font-castoro text-4xl mb-6">Macroeconomic Principles Applied</h2>
+                
+                <p>The project applied several key macroeconomic principles to the ASEAN regional context. Using the theory of comparative advantage, I analyzed how specialization patterns created both strengths and vulnerabilities in the regional economy. This revealed how export dependency left certain countries vulnerable to global market fluctuations, while economic diversification correlated strongly with resilience to external shocks.</p>
+                
+                <p>Investment multiplier effects were quantified to demonstrate how strategic redirection of capital from traditional export sectors to digital infrastructure could yield significant stability gains without sacrificing growth rates. The analysis supported the economic principle that diversification and technological advancement can break the traditional trade-off between growth and stability.</p>
+            </div>
+            
+            <div>
+                <h2 class="font-castoro text-4xl mb-6">Sustainability Framework</h2>
+                
+                <p>The project bridged macroeconomic analysis with UN Sustainable Development Goal 8 (Decent Work and Economic Growth). By mapping economic indicators against sustainability targets, I identified specific intervention points where policy changes could simultaneously enhance economic resilience and sustainability outcomes. The framework demonstrated that economic sustainability depends on both internal economic diversity and the cultivation of regional economic interdependencies.</p>
+                
+                <p>A central insight was that digital economy investments create more distributed economic participation and reduce environmental impact per unit of GDP growth compared to traditional export sectors. This finding underscored the macroeconomic principle that structural economic transformation can align growth objectives with sustainability goals.</p>
+            </div>
+            
+            <div>
+                <h2 class="font-castoro text-4xl mb-6">Development Strategy</h2>
+                
+                <p>Based on the analysis, I formulated a three-part macroeconomic strategy for sustainable development in the ASEAN region: digital infrastructure development, intra-regional trade enhancement, and targeted human capital investment. Each component was designed to strengthen economic resilience while promoting more equitable and sustainable growth patterns.</p>
+                
+                <p>The strategy leveraged macroeconomic principles of regional economic integration, showing how coordinated policy approaches could enhance the overall stability of the regional economic system. By identifying complementary economic capacities across ASEAN nations, the framework provided a roadmap for creating mutual reinforcement between national economic objectives.</p>
+            </div>
+            
+            <div>
+                <h2 class="font-castoro text-4xl mb-6">Key Insights</h2>
+                
+                <p>This project yielded several important macroeconomic insights. First, the relationship between economic diversification and stability is quantifiable and can be strategically managed through targeted investment policies. Second, digital economy development offers a particularly efficient pathway for enhancing both economic resilience and sustainability outcomes. Finally, regional economic coordination offers substantial stability benefits beyond what individual national policies can achieve.</p>
+                
+                <p>The analysis demonstrated that sustainable development is not merely an environmental consideration but a fundamental macroeconomic strategy for creating more stable, resilient, and equitable economic systems. This perspective aligns with contemporary macroeconomic thinking that increasingly recognizes sustainability as integral to long-term economic performance.</p>
+                
+                <div class="mt-12 text-center">
+                    <a href="project/SoutheastAsia.pdf" class="view-presentation-btn font-public-sans text-white py-4 px-8 text-m inline-block">
+                        View Presentation
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Animation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            const heroElement = document.querySelector('.hero-section .fade-in');
+            const articleContent = document.querySelector('.article-content.fade-in');
+            let articleFaded = false;
+            
+            // Function to check if element is in viewport
+            function isInViewport(element) {
+                const rect = element.getBoundingClientRect();
+                return (
+                    rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.bottom >= 0
+                );
+            }
+            
+            // Immediately fade in the hero section text
+            setTimeout(() => {
+                heroElement.classList.add('visible');
+            }, 300);
+            
+            // Function to handle scroll animation for article content (trigger once)
+            function handleScroll() {
+                if (!articleFaded && isInViewport(articleContent)) {
+                    articleContent.classList.add('visible');
+                    articleFaded = true;
+                    // Once article has faded in, no need to keep checking
+                    window.removeEventListener('scroll', handleScroll);
+                }
+            }
+            
+            // Add scroll event listener
+            window.addEventListener('scroll', handleScroll);
+            
+            // Initial check on page load for article content
+            handleScroll();
+        });
+    </script>
+</body>
+</html>

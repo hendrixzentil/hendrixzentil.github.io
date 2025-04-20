@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website Project - Hendrix Zentil</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prata&family=Public+Sans:wght@400;600&family=Pinyon+Script&family=Castoro&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'prata': ['Prata', 'serif'],
+                        'public-sans': ['Public Sans', 'sans-serif'],
+                        'pinyon': ['Pinyon Script', 'cursive'],
+                        'castoro': ['Castoro', 'serif']
+                    },
+                    colors: {
+                        'accent-blue': '#000068',
+                        'off-white': '#f2f2f2',
+                        'dark-gray': '#1A1A1A'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+        
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        
+        @media (min-width: 768px) {
+            .hero-section {
+                flex-direction: row;
+            }
+        }
+        
+        .project-title {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        
+        .skills-bubble, .tools-bubble {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 999px;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        
+        .article-content {
+            max-width: 48rem;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .article-content h2 {
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .article-section {
+            padding: 5rem 2rem;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .img-container {
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .img-container img {
+            max-width: 100%;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        .img-caption {
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+            color: #aaa;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header class="bg-black text-white p-5 flex justify-between items-center">
+        <a href="index.html" class="font-prata text-2xl">Hendrix Z.</a>
+        <nav>
+            <ul class="flex space-x-6 font-public-sans">
+                <li><a href="about.html" class="hover:text-gray-300">About</a></li>
+                <li><a href="explore.html" class="hover:text-gray-300">Explore</a></li>
+                <li><a href="contact.html" class="hover:text-gray-300">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section - Full Screen Split Layout -->
+    <section class="hero-section">
+        <!-- Left Side - Title Information -->
+        <div class="w-full md:w-1/2 bg-gray-200 flex items-center p-8 md:p-16 relative">
+            <div class="max-w-xl fade-in">
+                <h1 class="font-castoro text-5xl md:text-6xl text-black mb-6">Portfolio Website</h1>
+                
+                <div class="font-public-sans text-gray-600 mb-6">
+                    <p class="text-xl">April 2025</p>
+                </div>
+                
+                <div class="mb-8">
+                    <h3 class="font-public-sans font-semibold text-xl mb-4">Skills</h3>
+                    <div class="flex flex-wrap">
+                        <span class="skills-bubble">Web Development</span>
+                        <span class="skills-bubble">UI/UX Design</span>
+                        <span class="skills-bubble">Responsive Design</span>
+                        <span class="skills-bubble">Content Creation</span>
+                        <span class="skills-bubble">Visual Design</span>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="font-public-sans font-semibold text-xl mb-4">Tools</h3>
+                    <div class="flex flex-wrap">
+                        <span class="tools-bubble">HTML5</span>
+                        <span class="tools-bubble">CSS3</span>
+                        <span class="tools-bubble">Tailwind CSS</span>
+                        <span class="tools-bubble">JavaScript</span>
+                        <span class="tools-bubble">Visual Studio Code</span>
+                        <span class="tools-bubble">GitHub</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="absolute bottom-8 right-8 md:hidden text-center">
+                <span class="text-sm text-gray-500">Scroll down to read more</span>
+                <div class="mt-2 animate-bounce">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Right Side - Featured Image -->
+        <div class="w-full md:w-1/2 h-96 md:h-auto">
+            <img src="project/portfolio1.png" alt="Portfolio Website Project" class="w-full h-full object-cover">
+        </div>
+    </section>
+
+    <!-- Article Section - Project Journal -->
+    <section class="bg-dark-gray text-white article-section">
+        <div class="article-content fade-in">
+            <div>
+                <h2 class="font-castoro text-4xl mb-6">The Journey</h2>
+                
+                <p>I created this portfolio website to reveal dimensions of myself that résumés and applications simply cannot capture. By hand-crafting it rather than using templates or platforms like Wix or WordPress, I maintained complete creative freedom. This digital canvas represents not just my work, but my personality and aspirations—a living artifact designed to evolve alongside my professional journey.</p>
+                
+                <div class="img-container">
+                    <img src="project/portfolio2.jpg" alt="Initial website sketches">
+                    <p class="img-caption">Initial sketches and wireframes for the website layout</p>
+                </div>
+            </div>
+            
+            <div>
+                <h2 class="font-castoro text-4xl mb-6">Planning Phase</h2>
+                
+                <p>My research revealed a curious gap: while software engineers had mastered the art of personal websites, finance professionals largely relied on mucj simpler designs. This observation shaped my vision to create something distinctively mine—minimalist and refined, yet warm and approachable. I focused on thoughtful typography, subtle animations, and a carefully curated color palette to achieve this balance between professionalism and personality.</p>
+            </div>
+            
+            <div>
+                <h2 class="font-castoro text-4xl mb-6">Development Process</h2>
+                
+                <p>I built the site using HTML, CSS with Tailwind, and JavaScript. Having created a personal website before, this iteration benefited from both my improved technical skills and Tailwind's utility-first approach. This framework proved invaluable for rapid prototyping and maintaining consistency across pages, allowing me to create a responsive design that functions seamlessly across all devices.</p>
+                
+                <p>The subtle fade-in animations triggered by scrolling were a particular challenge worth solving. These elements create a sense of discovery, revealing content as visitors explore—much like how I hope people discover different facets of my professional identity over time.</p>
+                
+                <div class="img-container">
+                    <img src="project/portfolio3.png" alt="Code snippet from development">
+                    <p class="img-caption">Working on the fade-in animation implementation</p>
+                </div>
+            </div>
+            
+            <div>
+                <h2 class="font-castoro text-4xl mb-6">Learning Outcomes</h2>
+                
+                <p>This project sharpened not just my technical abilities in HTML semantics and JavaScript, but also my understanding of effective visual communication. The process of creating this site forced me to articulate my professional narrative with clarity—defining who I am, what I value, and where I'm headed. Through iterative testing with peers, I discovered that good design emerges from listening as much as creating, a principle I'll carry into my finance career.</p>
+            </div>
+            
+            <div>
+                <h2 class="font-castoro text-4xl mb-6">Conclusion</h2>
+                
+                <p>Building this portfolio was an exercise in self-reflection and technical craftsmanship. It embodies my approach to finance: methodical, thoughtful, and purpose-driven. Just as this website serves as a platform for connection, I aim to use finance as a vehicle for positive impact—whether through environmental sustainability, arts funding, or financial literacy education. This isn't merely a portfolio; it's a promise of the professional I'm becoming.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Animation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            const heroElement = document.querySelector('.hero-section .fade-in');
+            const articleContent = document.querySelector('.article-content.fade-in');
+            let articleFaded = false;
+            
+            // Function to check if element is in viewport
+            function isInViewport(element) {
+                const rect = element.getBoundingClientRect();
+                return (
+                    rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.bottom >= 0
+                );
+            }
+            
+            // Immediately fade in the hero section text
+            setTimeout(() => {
+                heroElement.classList.add('visible');
+            }, 300);
+            
+            // Function to handle scroll animation for article content (trigger once)
+            function handleScroll() {
+                if (!articleFaded && isInViewport(articleContent)) {
+                    articleContent.classList.add('visible');
+                    articleFaded = true;
+                    // Once article has faded in, no need to keep checking
+                    window.removeEventListener('scroll', handleScroll);
+                }
+            }
+            
+            // Add scroll event listener
+            window.addEventListener('scroll', handleScroll);
+            
+            // Initial check on page load for article content
+            handleScroll();
+        });
+    </script>
+</body>
+</html>

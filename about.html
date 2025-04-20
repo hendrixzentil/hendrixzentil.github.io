@@ -1,80 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - Hendrix Zentil</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=EB+Garamond">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display">
-    <link rel="stylesheet" href="style.css">
+    <title>About - Hendrix Zentil</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prata&family=Public+Sans:wght@400;600&family=Pinyon+Script&family=Castoro&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'prata': ['Prata', 'serif'],
+                        'public-sans': ['Public Sans', 'sans-serif'],
+                        'pinyon': ['Pinyon Script', 'cursive'],
+                        'castoro': ['Castoro', 'serif']
+                    },
+                    colors: {
+                        'accent-red': '#BA1E23',
+                        'off-white': '#f2f2f2'
+                    }
+                }
+            }
+        }
+    </script>
+    
     <style>
-        .footer {
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #ffffff;
+        }
+        
+        .page-title {
+            position: relative;
             text-align: center;
-            margin-top: 40px;
-        }
-        .linkedin-container {
-            display: inline-block;
-        }
-        .linkedin-logo {
-            width: 40px;
-            height: 40px;
+            margin-bottom: 3rem;
         }
         
-        /* About Content Styling */
-        .about-content {
-            max-width: 800px;
-            margin: 60px auto;
-            padding: 0 20px;
+        .page-title-number {
+            position: absolute;
+            font-size: 10rem;
+            color: #f2f2f2;
+            z-index: -1;
+            font-weight: 600;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .section-title {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section-title::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background-color: #BA1E23;
+        }
+        
+        .fade-in {
             opacity: 0;
-            animation: fadeIn 1s ease-in-out forwards;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
         }
         
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
-
 <body>
-    <!-- Header Section -->
-    <header class="header-banner">
-        <div class="header-container">
-            <h1>Hendrix Zentil</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+    <!-- Navigation Bar -->
+    <header class="bg-black text-white p-5 flex justify-between items-center">
+        <a href="index.html" class="font-prata text-2xl">Hendrix Z.</a>
+        <nav>
+            <ul class="flex space-x-6 font-public-sans">
+                <li><a href="about.html" class="hover:text-gray-300">About</a></li>
+                <li><a href="explore.html" class="hover:text-gray-300">Explore</a></li>
+                <li><a href="contact.html" class="hover:text-gray-300">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- About Content Section -->
-    <main>
-        <div class="about-content">
-            <h2 class="about-heading">About.</h2>
-            <p>⠀⠀⠀⠀Since starting my fitness journey with Taekwondo at age 12 and learning about the venerable lineage of discipline and principles that underpin traditional martial arts, I have cultivated a deep respect for mental resilience, physical conditioning, and the pursuit of personal excellence.</p>
-            <p>This path has led me to question what purpose "personal excellence" serves, and my open-ended answer to that is currently "to do good."</p>
-            <p>To find out what "doing good" was, I looked to history to discern how others have contributed to their societies, overcome obstacles, and impact those around them.</p>
-            <p>My studies have led me to finance and economics, fields that inspire me with their potential to drive meaningful change. Now, I dedicate myself to mastering these fields, and strive to uplift others, create opportunities, and contribute to a sustainable, meaningful future.</p>
+    <!-- Main Content -->
+    <main class="flex-grow container mx-auto px-6 py-12 md:py-16">
+        <!-- About Me Section -->
+        <div class="mb-16 fade-in">
+            <div class="page-title relative mb-20">
+                <span class="page-title-number font-public-sans">01</span>
+                <h1 class="font-castoro text-4xl md:text-6xl text-black relative z-10">About Me.</h1>
+            </div>
+            
+            <div class="max-w-5xl mx-auto font-public-sans text-2xl leading-relaxed space-y-8 text-left">
+                <p>Having grown up in the comfortable Laguna Beach, California, I didn't live by a strict regimen until I started my Taekwondo journey at age 12. Through fitness and competition, I learned about the venerable lineage of discipline and principles that underpin traditional martial arts, and have since cultivated a deep respect for mental resilience, physical conditioning, and the pursuit of personal excellence.</p>
+                
+                <p>This path has led me to question what purpose "personal excellence" serves, and my open-ended answer to that is currently "to do good."</p>
+                
+                <p>To find out what "doing good" was, I looked to history to discern how others have contributed to their societies, overcome obstacles, and impact those around them.</p>
+                
+                <p>My studies have led me to finance and economics, fields that inspire me with their potential to drive meaningful change. Now, I dedicate myself to mastering these fields, and strive to uplift others, create opportunities, and contribute to a sustainable, meaningful future.</p>
+            </div>
+        </div>
+        
+        <!-- Experience, Awards, and Skills Sections -->
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4">
+            <!-- Experience Section -->
+            <div class="fade-in" style="animation-delay: 0.2s;">
+                <h2 class="font-castoro text-3xl section-title">Experience</h2>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="font-public-sans font-semibold text-xl">Fix Manufacturing</h3>
+                        <p class="font-public-sans text-gray-600">Winter Operations Intern</p>
+                        <p class="font-public-sans text-sm text-gray-500">December 2024 - January 2025</p>
+                    </div>
+                    <div>
+                        <h3 class="font-public-sans font-semibold text-xl">In-N-Out</h3>
+                        <p class="font-public-sans text-gray-600">Store Associate</p>
+                        <p class="font-public-sans text-sm text-gray-500">September 2022 - August 2024</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Awards Section -->
+            <div class="fade-in" style="animation-delay: 0.3s;">
+                <h2 class="font-castoro text-3xl section-title">Awards</h2>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="font-public-sans font-semibold text-xl">Dean's List</h3>
+                        <p class="font-public-sans text-gray-600">All Semesters</p>
+                    </div>
+                    <div>
+                        <h3 class="font-public-sans font-semibold text-xl"><a href="ExcelCertificate.pdf">Excel Certification</a></h3>
+                        <p class="font-public-sans text-gray-600">May 2024</p>
+                    </div>
+                    <div>
+                        <h3 class="font-public-sans font-semibold text-xl">Best Customer Service</h3>
+                        <p class="font-public-sans text-gray-600">In-N-Out - 2023</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Skills Section -->
+            <div class="fade-in" style="animation-delay: 0.4s;">
+                <h2 class="font-castoro text-3xl section-title">Skills</h2>
+                
+                <!-- Technical Skills -->
+                <div class="mb-6">
+                    <h3 class="font-public-sans font-semibold text-xl mb-2">Technical</h3>
+                    <ul class="font-public-sans text-gray-700 space-y-1">
+                        <li>Intermediate Lua, Python, HTML, CSS, JavaScript</li>
+                        <li>Data Analysis & Visualization</li>
+                        <li>Financial Modeling</li>
+                        <li>Accounting & Financial Analysis</li>
+                    </ul>
+                </div>
+                
+                <!-- Business Skills -->
+                <div class="mb-6">
+                    <h3 class="font-public-sans font-semibold text-xl mb-2">Business</h3>
+                    <ul class="font-public-sans text-gray-700 space-y-1">
+                        <li>Market Research</li>
+                        <li>ESG Investment Analysis</li>
+                        <li>Sustainable Finance</li>
+                        <li>Financial Literacy Education</li>
+                    </ul>
+                </div>
+                
+                <!-- Soft Skills -->
+                <div>
+                    <h3 class="font-public-sans font-semibold text-xl mb-2">Personal</h3>
+                    <ul class="font-public-sans text-gray-700 space-y-1">
+                        <li>Collaborative Team Player</li>
+                        <li>Adaptable & Teachable</li>
+                        <li>Critical Thinking</li>
+                        <li>Public Speaking</li>
+                        <li>Resilience & Perseverance</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </main>
 
-    <!-- Footer Section with LinkedIn -->
-    <footer class="footer">
-        <div class="linkedin-container">
-            <a href="https://www.linkedin.com/in/hendrixzentil" target="_blank">
-                <img src="linkedin-logo.png" alt="LinkedIn Logo" class="linkedin-logo">
-            </a>
-        </div>
-    </footer>
+    <!-- Animation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            // Function to check if element is in viewport
+            function isInViewport(element) {
+                const rect = element.getBoundingClientRect();
+                return (
+                    rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.bottom >= 0
+                );
+            }
+            
+            // Function to handle scroll animation
+            function handleScroll() {
+                fadeElements.forEach(element => {
+                    if (isInViewport(element)) {
+                        // Add delay based on data attribute or style
+                        const delay = element.style.animationDelay || '0s';
+                        setTimeout(() => {
+                            element.classList.add('visible');
+                        }, parseInt(delay) * 1000 || 0);
+                    }
+                });
+            }
+            
+            // Initial check on page load
+            handleScroll();
+            
+            // Add scroll event listener
+            window.addEventListener('scroll', handleScroll);
+        });
+    </script>
 </body>
-
 </html>

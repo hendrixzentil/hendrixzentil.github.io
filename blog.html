@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Hendrix Zentil</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prata&family=Public+Sans:wght@400;600&family=Pinyon+Script&family=Castoro&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'prata': ['Prata', 'serif'],
+                        'public-sans': ['Public Sans', 'sans-serif'],
+                        'pinyon': ['Pinyon Script', 'cursive'],
+                        'castoro': ['Castoro', 'serif']
+                    },
+                    colors: {
+                        'accent-red': '#BA1E23',
+                        'off-white': '#f2f2f2'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            background-color: white;
+        }
+        
+        .page-title {
+            position: relative;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .page-title-number {
+            position: absolute;
+            font-size: 10rem;
+            color: #f2f2f2; /* Changed to gray color */
+            z-index: 0;
+            font-weight: 600;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .blog-button {
+            transition: all 0.3s ease;
+            background-color: #BA1E23;
+        }
+        
+        .blog-button:hover {
+            background-color: #d82329;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(186, 30, 35, 0.3);
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .description-text {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header class="bg-black text-white p-5 flex justify-between items-center">
+        <a href="index.html" class="font-prata text-2xl">Hendrix Z.</a>
+        <nav>
+            <ul class="flex space-x-6 font-public-sans">
+                <li><a href="about.html" class="hover:text-gray-300">About</a></li>
+                <li><a href="explore.html" class="hover:text-gray-300">Explore</a></li>
+                <li><a href="contact.html" class="hover:text-gray-300">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow container mx-auto px-6 py-12 md:py-16 flex flex-col items-center justify-center">
+        <div class="max-w-3xl mx-auto fade-in">
+            <div class="page-title relative mb-16 text-center">
+                <span class="page-title-number font-public-sans">05</span>
+                <h1 class="font-castoro text-5xl md:text-6xl text-black relative z-10">My Blog.</h1>
+            </div>
+            
+            <div class="max-w-2xl mx-auto font-public-sans text-xl leading-relaxed space-y-6 mb-12 description-text">
+                <p>I've hand-crafted a dedicated blog platform where I share my thoughts and insights on finance, philosophy, economics, and more. This platform serves as my personal journal where I explore ideas that matter to me and discuss their implications for our world.</p>
+                
+                <p>Through this blog, I aim to contribute to meaningful dialogues about sustainable finance, spread financial literacy, and explore the intersections between economics, arts, and sciences.</p>
+            </div>
+            
+            <div class="text-center">
+                <a href="https://hendrixzentil.github.io/journal" target="_blank" class="blog-button font-public-sans text-white py-4 px-8 rounded-md text-xl inline-block mt-6">
+                    Visit My Blog
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Animation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            // Function to check if element is in viewport
+            function isInViewport(element) {
+                const rect = element.getBoundingClientRect();
+                return (
+                    rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.bottom >= 0
+                );
+            }
+            
+            // Function to handle scroll animation
+            function handleScroll() {
+                fadeElements.forEach(element => {
+                    if (isInViewport(element)) {
+                        // Add delay based on data attribute or style
+                        const delay = element.style.animationDelay || '0s';
+                        setTimeout(() => {
+                            element.classList.add('visible');
+                        }, parseInt(delay) * 1000 || 0);
+                    }
+                });
+            }
+            
+            // Initial check on page load
+            handleScroll();
+            
+            // Add scroll event listener
+            window.addEventListener('scroll', handleScroll);
+        });
+    </script>
+</body>
+</html>

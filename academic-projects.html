@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Projects - Hendrix Zentil</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prata&family=Public+Sans:wght@400;600&family=Pinyon+Script&family=Castoro&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'prata': ['Prata', 'serif'],
+                        'public-sans': ['Public Sans', 'sans-serif'],
+                        'pinyon': ['Pinyon Script', 'cursive'],
+                        'castoro': ['Castoro', 'serif']
+                    },
+                    colors: {
+                        'accent-red': '#BA1E23',
+                        'off-white': '#f2f2f2',
+                        'dark-gray': '#1A1A1A',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #1A1A1A;
+            color: #ffffff;
+        }
+        
+        .page-title {
+            position: relative;
+            text-align: left;
+            margin-bottom: 3.5rem;
+        }
+        
+        .page-title::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 400px;
+            height: 3px;
+            background-color: #BA1E23;
+        }
+        
+        .description-text {
+            margin-top: 72px;
+        }
+        
+        .page-title-number {
+            position: absolute;
+            font-size: 10rem;
+            color: rgba(128, 128, 128, 0.2);
+            z-index: 1;
+            font-weight: 600;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            margin-left: -20px;
+        }
+        
+        .project-card {
+            transition: all 0.4s ease;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-bottom: 3px solid #BA1E23;
+        }
+        
+        .project-card:hover .card-title {
+            color: #BA1E23;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Split layout with different backgrounds */
+        .split-container {
+            display: flex;
+            flex-direction: column;
+            min-height: calc(100vh - 72px);
+        }
+        
+        @media (min-width: 768px) {
+            .split-container {
+                flex-direction: row;
+            }
+            
+            .left-section {
+                width: 33%;
+                background-color: #333333;
+            }
+            
+            .right-section {
+                width: 67%;
+                background-color: #1A1A1A;
+            }
+        }
+        
+        .project-icon {
+            color: #BA1E23;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header class="bg-black text-white p-5 flex justify-between items-center">
+        <a href="index.html" class="font-prata text-2xl">Hendrix Z.</a>
+        <nav>
+            <ul class="flex space-x-6 font-public-sans">
+                <li><a href="about.html" class="hover:text-gray-300">About</a></li>
+                <li><a href="explore.html" class="hover:text-gray-300">Explore</a></li>
+                <li><a href="contact.html" class="hover:text-gray-300">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Split Layout Container -->
+    <div class="split-container">
+        <!-- Left Section - Title -->
+        <div class="left-section flex items-center p-8 md:p-12">
+            <div class="fade-in">
+                <div class="page-title relative mb-8">
+                    <span class="page-title-number font-public-sans">03</span>
+                    <h1 class="font-castoro text-4xl md:text-6xl text-white relative z-10">Academic Projects.</h1>
+                </div>
+                <div class="max-w-md font-public-sans text-lg leading-relaxed description-text text-gray-300">
+                    <p>These projects represent the application of my academic knowledge to real-world financial and economic challenges. Each project demonstrates my analytical skills, research capabilities, and commitment to creating sustainable economic solutions.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Right Section - Project Cards -->
+        <div class="right-section p-8 md:p-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- UN Sustainable Development Analysis Project Card -->
+                <a href="project-un-analysis.html" class="project-card bg-[#333333] rounded-lg overflow-hidden shadow-md fade-in" style="animation-delay: 0.2s;">
+                    <div class="p-8">
+                        <div class="project-icon">🌏</div>
+                        <h2 class="font-castoro text-3xl mb-3 card-title text-white">UN Sustainable Development Analysis: ASEAN</h2>
+                        <div class="font-public-sans text-accent-red mb-4">Principles of Macroeconomics</div>
+                        <p class="font-public-sans text-gray-300 mb-4">
+                            Applied academic theory to identify real-world economic challenges in ASEAN nations through Bloomberg Terminal analysis of trade balance data. Created a sustainable development agenda that projected 15% reduction in regional economic volatility by redirecting 30% of export-focused investment toward digital economy sectors.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-[#444444] text-gray-200 px-3 py-1 rounded-full text-sm font-public-sans">Data Analysis</span>
+                            <span class="bg-[#444444] text-gray-200 px-3 py-1 rounded-full text-sm font-public-sans">Macroeconomics</span>
+                            <span class="bg-[#444444] text-gray-200 px-3 py-1 rounded-full text-sm font-public-sans">Sustainable Development</span>
+                            <span class="bg-[#444444] text-gray-200 px-3 py-1 rounded-full text-sm font-public-sans">Bloomberg Terminal</span>
+                        </div>
+                        <div class="font-public-sans text-sm text-gray-400">
+                            January 2024
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Animation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            // Function to check if element is in viewport
+            function isInViewport(element) {
+                const rect = element.getBoundingClientRect();
+                return (
+                    rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.bottom >= 0
+                );
+            }
+            
+            // Function to handle scroll animation
+            function handleScroll() {
+                fadeElements.forEach(element => {
+                    if (isInViewport(element)) {
+                        // Add delay based on data attribute or style
+                        const delay = element.style.animationDelay || '0s';
+                        setTimeout(() => {
+                            element.classList.add('visible');
+                        }, parseInt(delay) * 1000 || 0);
+                    }
+                });
+            }
+            
+            // Initial check on page load
+            handleScroll();
+            
+            // Add scroll event listener
+            window.addEventListener('scroll', handleScroll);
+        });
+    </script>
+</body>
+</html>

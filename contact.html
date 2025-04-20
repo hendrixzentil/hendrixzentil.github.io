@@ -1,212 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Hendrix Zentil</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display|EB+Garamond">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prata&family=Public+Sans:wght@400;600&family=Pinyon+Script&family=Castoro&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'prata': ['Prata', 'serif'],
+                        'public-sans': ['Public Sans', 'sans-serif'],
+                        'pinyon': ['Pinyon Script', 'cursive'],
+                        'castoro': ['Castoro', 'serif']
+                    },
+                    colors: {
+                        'accent-red': '#BA1E23',
+                        'off-white': '#f2f2f2',
+                        'dark-gray': '#1A1A1A',
+                    }
+                }
+            }
+        }
+    </script>
+    
     <style>
-        /* General Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Body Styling */
         body {
-            background-color: #f9f9f9; /* Light grey background */
-            color: #1c2b5a;
-            line-height: 1.6;
-            font-family: "EB Garamond", serif;
-        }
-
-        /* Header Styling */
-        .header-banner {
-            width: 100%;
-            background-color: #191970;
-            padding: 20px;
-            color: #ffffff;
-            font-family: "Playfair Display", serif;
-        }
-
-        .header-container {
-            max-width: 1920px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-        }
-
-        nav ul li {
-            margin-left: 20px;
-        }
-
-        nav ul li a {
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-
-        /* Contact Content Section */
-        .contact-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            max-width: 1000px;
-            margin: 60px auto;
-            padding: 40px;
-            background-color: #ffffff; /* Pure white background for contact area */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 12px;
-            opacity: 0;
-            animation: fadeIn 1s ease-in-out forwards;
-        }
-
-        .contact-info {
-            flex: 1;
-            max-width: 40%;
-        }
-
-        .contact-heading {
-            font-family: "Playfair Display", serif;
-            font-size: 3rem;
-            color: #000000; /* Black color for heading */
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        .contact-info p {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            color: #1c2b5a;
-            line-height: 1.8;
-            max-width: 90%;
-        }
-
-        /* Contact Form Styling */
-        .contact-form {
-            flex: 1;
-            max-width: 50%;
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #1A1A1A;
+            color: #ffffff;
         }
-
+        
+        .page-title {
+            position: relative;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+        
+        .page-title-number {
+            position: absolute;
+            font-size: 10rem;
+            color: #333333;
+            z-index: 0;
+            font-weight: 600;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            margin-left: -20px; /* Move slightly to the right */
+        }
+        
+        .social-link {
+            position: relative;
+            display: block;
+            transition: all 0.3s ease;
+            padding: 4px 0;
+        }
+        
+        .social-link .username {
+            position: static;
+            display: inline-block;
+            margin-left: 10px;
+            opacity: 0;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .social-link:hover .username {
+            opacity: 1;
+        }
+        
+        .email-btn {
+            transition: all 0.3s ease;
+            background-color: #BA1E23;
+        }
+        
+        .email-btn:hover {
+            background-color: #d82329;
+        }
+        
+        .resume-btn {
+            transition: all 0.3s ease;
+            border: 2px solid #ffffff;
+        }
+        
+        .resume-btn:hover {
+            background-color: #ffffff;
+            color: #1A1A1A;
+        }
+        
         .contact-form input,
         .contact-form textarea {
-            width: 100%;
-            padding: 15px;
-            border: none; /* Removed border outline */
-            border-radius: 8px;
-            font-family: "EB Garamond", serif;
-            font-size: 1rem;
-            background-color: #f9f9f9; /* Pure white for input fields */
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
         }
-
+        
         .contact-form input:focus,
         .contact-form textarea:focus {
-            outline: none; /* Remove default outline */
-            box-shadow: 0 0 5px rgba(28, 43, 90, 0.5); /* Subtle shadow on focus */
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            outline: none;
         }
-
-        .submit-button {
-            background-color: #000000; /* Pure black button */
-            color: #ffffff;
-            padding: 10px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-family: "Playfair Display", serif;
-            font-size: 1rem;
-            transition: background-color 0.3s;
-            width: auto;
-            align-self: flex-start;
+        
+        .contact-form button {
+            transition: all 0.3s ease;
         }
-
-        .submit-button:hover {
-            background-color: #333333; /* Slightly lighter black on hover */
+        
+        .contact-form button:hover {
+            background-color: #BA1E23;
         }
-
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
         }
-
-        /* Responsive Styling */
-        @media (max-width: 768px) {
-            .contact-container {
-                flex-direction: column;
-                padding: 20px;
-            }
-
-            .contact-info,
-            .contact-form {
-                max-width: 100%;
-            }
-
-            .contact-heading {
-                text-align: center;
-                font-size: 2.5rem;
-            }
-
-            .contact-info p {
-                text-align: center;
-                font-size: 1rem;
-                max-width: 100%;
-            }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
-
 <body>
-    <!-- Header Section -->
-    <header class="header-banner">
-        <div class="header-container">
-            <h1>Hendrix Zentil</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                </ul>
-            </nav>
-        </div>
+    <!-- Navigation Bar -->
+    <header class="bg-black text-white p-5 flex justify-between items-center">
+        <a href="index.html" class="font-prata text-2xl">Hendrix Z.</a>
+        <nav>
+            <ul class="flex space-x-6 font-public-sans">
+                <li><a href="about.html" class="hover:text-gray-300">About</a></li>
+                <li><a href="explore.html" class="hover:text-gray-300">Explore</a></li>
+                <li><a href="contact.html" class="hover:text-gray-300">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- Contact Content Section -->
-    <main>
-        <div class="contact-container">
-            <div class="contact-info">
-                <h2 class="contact-heading">Contact.</h2>
-                <p>Your interest is greatly appreciated. I look forward to responding to your queries!</p>
-                <p>Best Regards,<br>Hendrix Z.</p>
+    <!-- Main Content -->
+    <main class="flex-grow container mx-auto px-6 py-12 md:py-16">
+        <!-- Contact Section Title -->
+        <div class="mb-16 fade-in relative">
+            <div class="page-title relative mb-20">
+                <span class="page-title-number font-public-sans">04</span>
+                <h1 class="font-castoro text-4xl md:text-6xl text-white relative z-10 ml-0">Let's Get In Touch.</h1>
             </div>
-
-            <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
-                <input type="hidden" name="access_key" value="341122c1-1065-497c-8376-7fe7f5c979f8">
-                <input type="text" id="name" name="name" placeholder="Your Name" required>
-                <input type="email" id="email" name="email" placeholder="Email" required>
-                <textarea id="message" name="message" rows="6" placeholder="Message" required></textarea>
-                <button type="submit" class="submit-button">Send Now</button>
-            </form>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+                <!-- Left Side - Contact Card (2/3 width) -->
+                <div class="md:col-span-2 fade-in" style="animation-delay: 0.2s;">
+                    <div class="bg-[#333333] rounded-lg p-8 shadow-lg">
+                        <div class="mb-8 font-public-sans text-xl leading-relaxed space-y-6">
+                            <p class="text-gray-300">
+                                Your interest is greatly appreciated. I am always available, and I respond fastest via email and LinkedIn. I look forward to responding to your queries!
+                            </p>
+                            <p class="text-gray-300">
+                                Best Regards,<br>
+                                Hendrix Z.
+                            </p>
+                        </div>
+                        
+                        <!-- Contact Form -->
+                        <form class="contact-form space-y-6" action="https://api.web3forms.com/submit" method="POST">
+                            <input type="hidden" name="access_key" value="341122c1-1065-497c-8376-7fe7f5c979f8">
+                            <div>
+                                <input type="text" id="name" name="name" placeholder="Your Name" required
+                                    class="w-full px-4 py-3 rounded-md text-white">
+                            </div>
+                            <div>
+                                <input type="email" id="email" name="email" placeholder="Email" required
+                                    class="w-full px-4 py-3 rounded-md text-white">
+                            </div>
+                            <div>
+                                <textarea id="message" name="message" rows="6" placeholder="Message" required
+                                    class="w-full px-4 py-3 rounded-md text-white"></textarea>
+                            </div>
+                            <div>
+                                <button type="submit" 
+                                    class="bg-white text-dark-gray px-8 py-3 rounded-md font-public-sans font-semibold transition-all hover:bg-accent-red hover:text-white">
+                                    Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Right Side - Follow and Contact (1/3 width) -->
+                <div class="md:col-span-1 fade-in" style="animation-delay: 0.3s;">
+                    <!-- Follow Me Section -->
+                    <div class="mb-12">
+                        <h2 class="font-castoro text-3xl mb-6">Follow Me</h2>
+                        <div class="space-y-2">
+                            <a href="https://instagram.com/hendrixzentil" class="social-link block text-gray-400 hover:text-white text-xl">
+                                Instagram <span class="username text-accent-red">@hendrixzentil</span>
+                            </a>
+                            <a href="https://x.com/hendrixzentil" class="social-link block text-gray-400 hover:text-white text-xl">
+                                Twitter <span class="username text-accent-red">@hendrixzentil</span>
+                            </a>
+                            <a href="https://threads.net/@hendrixzentil" class="social-link block text-gray-400 hover:text-white text-xl">
+                                Threads <span class="username text-accent-red">@hendrixzentil</span>
+                            </a>
+                            <a href="https://www.reddit.com/user/hendrixzentil/" class="social-link block text-gray-400 hover:text-white text-xl">
+                                Reddit <span class="username text-accent-red">@hendrixzentil</span>
+                            </a>
+                            <a href="https://tiktok.com/@hendrixzentil" class="social-link block text-gray-400 hover:text-white text-xl">
+                                TikTok <span class="username text-accent-red">@hendrixzentil</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Me Section -->
+                    <div class="mb-12">
+                        <h2 class="font-castoro text-3xl mb-6">Contact Me</h2>
+                        <div class="space-y-2">
+                            <p class="text-gray-400 text-xl">hz30973n@pace.edu</p>
+                            <p class="text-gray-400 text-xl">949 793 2654</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Buttons Section -->
+            <div class="grid grid-cols-2 gap-8 mt-12">
+                <a href="mailto:hz30973n@pace.edu" class="email-btn font-public-sans text-white py-3 px-6 text-center">
+                    Email Me
+                </a>
+                <a href="HendrixZentilResume.pdf" class="resume-btn font-public-sans text-white py-3 px-6 text-center">
+                    Get My Resumé
+                </a>
+            </div>
         </div>
     </main>
-</body>
 
+    <!-- Animation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            // Function to check if element is in viewport
+            function isInViewport(element) {
+                const rect = element.getBoundingClientRect();
+                return (
+                    rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.bottom >= 0
+                );
+            }
+            
+            // Function to handle scroll animation
+            function handleScroll() {
+                fadeElements.forEach(element => {
+                    if (isInViewport(element)) {
+                        // Add delay based on data attribute or style
+                        const delay = element.style.animationDelay || '0s';
+                        setTimeout(() => {
+                            element.classList.add('visible');
+                        }, parseInt(delay) * 1000 || 0);
+                    }
+                });
+            }
+            
+            // Initial check on page load
+            handleScroll();
+            
+            // Add scroll event listener
+            window.addEventListener('scroll', handleScroll);
+        });
+    </script>
+</body>
 </html>

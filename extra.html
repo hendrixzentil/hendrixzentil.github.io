@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extra - Hendrix Zentil</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prata&family=Public+Sans:wght@400;600&family=Pinyon+Script&family=Castoro&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'prata': ['Prata', 'serif'],
+                        'public-sans': ['Public Sans', 'sans-serif'],
+                        'pinyon': ['Pinyon Script', 'cursive'],
+                        'castoro': ['Castoro', 'serif']
+                    },
+                    colors: {
+                        'accent-red': '#BA1E23',
+                        'off-white': '#f2f2f2',
+                        'dark-1': '#111111',
+                        'dark-2': '#222222',
+                        'dark-3': '#333333',
+                        'dark-4': '#444444',
+                        'dark-5': '#555555',
+                        'dark-6': '#666666'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+        
+        .page-title {
+            position: relative;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .page-title-number {
+            position: absolute;
+            font-size: 10rem;
+            color: #333333;
+            z-index: -1;
+            font-weight: 600;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .section-title {
+            position: relative;
+            text-align: center;
+            margin-bottom: 2.5rem;
+            margin-top: 1rem;
+        }
+        
+        .section-title::before,
+        .section-title::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            height: 3px;
+            width: 100px;
+            background-color: #BA1E23;
+        }
+        
+        .section-title::before {
+            right: calc(50% + 100px);
+        }
+        
+        .section-title::after {
+            left: calc(50% + 100px);
+        }
+        
+        .content-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .media-container {
+            transition: transform 0.3s ease;
+        }
+        
+        .media-container:hover {
+            transform: translateY(-5px);
+        }
+        
+        .media-caption {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .media-container:hover .media-caption {
+            opacity: 1;
+        }
+        
+        audio {
+            width: 100%;
+        }
+        
+        .game-link {
+            transition: all 0.3s ease;
+        }
+        
+        .game-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .img-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0;
+        }
+        
+        .square-img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header class="bg-black text-white p-5 flex justify-between items-center">
+        <a href="index.html" class="font-prata text-2xl">Hendrix Z.</a>
+        <nav>
+            <ul class="flex space-x-6 font-public-sans">
+                <li><a href="about.html" class="hover:text-gray-300">About</a></li>
+                <li><a href="explore.html" class="hover:text-gray-300">Explore</a></li>
+                <li><a href="contact.html" class="hover:text-gray-300">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        <!-- Title Section - Black Background -->
+        <div class="py-12 md:py-16 px-6" style="background-color: #000000;">
+            <div class="container mx-auto fade-in">
+                <div class="page-title relative mb-16">
+                    <span class="page-title-number font-public-sans">06</span>
+                    <h1 class="font-castoro text-4xl md:text-6xl text-white relative z-10">Extra.</h1>
+                </div>
+                
+                <div class="content-container font-public-sans text-xl leading-relaxed mb-8 text-white">
+                    <p>Beyond finance, I nurture various creative interests and hobbies. This page showcases some of my personal passions including music, photography, visual art, and gaming. These pursuits help me maintain balance while developing different aspects of my creativity and problem-solving abilities.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Music Section - Very Dark Gray -->
+        <div class="py-12 px-6" style="background-color: #111111;">
+            <div class="container mx-auto fade-in" style="animation-delay: 0.2s;">
+                <h2 class="font-castoro text-3xl section-title mb-8 text-white">Music</h2>
+                
+                <div class="content-container mb-10">
+                    <p class="font-public-sans text-lg mb-8 text-white">Music has always been a significant part of my life, having studied in a jazz conservatory in high school. I enjoy both listening to and creating music in my free time. Below are a couple of original compositions I've created.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Music Item 1 -->
+                        <div style="background-color: #222222;" class="p-6 rounded-lg shadow-md media-container">
+                            <h3 class="font-public-sans font-semibold text-xl mb-3 text-white">Night House</h3>
+                            <audio controls>
+                                <source src="files/1.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                            <p class="font-public-sans text-sm text-gray-300 mt-3">A snippet of a house track I produced March 2025.</p>
+                        </div>
+                        
+                        <!-- Music Item 2 -->
+                        <div style="background-color: #222222;" class="p-6 rounded-lg shadow-md media-container">
+                            <h3 class="font-public-sans font-semibold text-xl mb-3 text-white">Goosebumps</h3>
+                            <audio controls>
+                                <source src="files/2.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                            <p class="font-public-sans text-sm text-gray-300 mt-3">An electronic track inspired by city life. Produced February 2025.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Photography Section - Medium Dark Gray -->
+        <div class="py-12 px-6" style="background-color: #222222;">
+            <div class="container mx-auto fade-in" style="animation-delay: 0.3s;">
+                <h2 class="font-castoro text-3xl section-title mb-8 text-white">Photography</h2>
+                
+                <div class="content-container mb-10">
+                    <p class="font-public-sans text-lg mb-8 text-white">Photography allows me to capture moments and perspectives that might otherwise go unnoticed, and share my persepctive of the real world.</p>
+                    
+                    <div class="img-grid">
+                        <!-- Photo Item 1 -->
+                        <div class="relative overflow-hidden media-container">
+                            <img src="images/photo1.jpg" alt="Shy Lamp" class="square-img">
+                            <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 p-4 media-caption">
+                                <h3 class="font-public-sans font-semibold text-white">Shy Lamp</h3>
+                                <p class="font-public-sans text-sm text-gray-300">City Hall Park, 2025</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Photo Item 2 -->
+                        <div class="relative overflow-hidden media-container">
+                            <img src="images/photo2.jpg" alt="Chinatown, My Muse" class="square-img">
+                            <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 p-4 media-caption">
+                                <h3 class="font-public-sans font-semibold text-white">Chinatown, My Muse</h3>
+                                <p class="font-public-sans text-sm text-gray-300">Pell Street, 2025</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Photo Item 3 -->
+                        <div class="relative overflow-hidden media-container">
+                            <img src="images/photo3.jpg" alt="City Hall" class="square-img">
+                            <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 p-4 media-caption">
+                                <h3 class="font-public-sans font-semibold text-white">City Hall</h3>
+                                <p class="font-public-sans text-sm text-gray-300">City Hall, 2024</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Photo Item 4 -->
+                        <div class="relative overflow-hidden media-container">
+                            <img src="images/photo4.jpg" alt="Manhattan Bridge" class="square-img">
+                            <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 p-4 media-caption">
+                                <h3 class="font-public-sans font-semibold text-white">Manhattan Bridge View</h3>
+                                <p class="font-public-sans text-sm text-gray-300">Manhattan, 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Video Games Section - Light Gray Background -->
+        <div class="py-12 px-6" style="background-color: #333333;">
+            <div class="container mx-auto fade-in" style="animation-delay: 0.5s;">
+                <h2 class="font-castoro text-3xl section-title mb-8 text-white">Video Games</h2>
+                
+                <div class="content-container mb-10">
+                    <p class="font-public-sans text-lg mb-8 text-white">Gaming provides both relaxation and intellectual challenge. I enjoy strategic games that require planning and quick decision-making.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- League of Legends -->
+                        <div style="background-color: #555555;" class="p-6 rounded-lg shadow-md game-link">
+                            <h3 class="font-public-sans font-semibold text-xl mb-3 text-white">League of Legends Ranked</h3>
+                            <img src="images/lol.png" alt="League of Legends" class="w-full h-48 object-cover rounded mb-4">
+                            <p class="font-public-sans text-gray-200 mb-4">Climbing slowly, aiming for Diamond 1. I am always seeking alternative paths to victory, with weird picks like Rek'Sai top.</p>
+                            <a href="https://u.gg/lol/profile/na1/ghull-club/overview" class="font-public-sans text-white hover:underline">View my stats →</a>
+                        </div>
+                        
+                        <!-- Minigame -->
+                        <div style="background-color: #555555;" class="p-6 rounded-lg shadow-md game-link">
+                            <h3 class="font-public-sans font-semibold text-xl mb-3 text-white">1v1 Minigame</h3>
+                            <img src="images/Scratch.png" alt="Financial Markets Minigame" class="w-full h-48 object-cover rounded mb-4">
+                            <p class="font-public-sans text-gray-200 mb-4">A simple Scratch-based game I developed at 12. Requires two players.</p>
+                            <a href="https://scratch.mit.edu/projects/207927037/" class="font-public-sans text-white hover:underline">Play the game →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Animation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            // Function to check if element is in viewport
+            function isInViewport(element) {
+                const rect = element.getBoundingClientRect();
+                return (
+                    rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.bottom >= 0
+                );
+            }
+            
+            // Function to handle scroll animation
+            function handleScroll() {
+                fadeElements.forEach(element => {
+                    if (isInViewport(element)) {
+                        // Add delay based on data attribute or style
+                        const delay = element.style.animationDelay || '0s';
+                        setTimeout(() => {
+                            element.classList.add('visible');
+                        }, parseInt(delay) * 1000 || 0);
+                    }
+                });
+            }
+            
+            // Initial check on page load
+            handleScroll();
+            
+            // Add scroll event listener
+            window.addEventListener('scroll', handleScroll);
+        });
+    </script>
+</body>
+</html>
